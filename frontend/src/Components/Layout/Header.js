@@ -48,12 +48,14 @@ const Header = ({ cartItems }) => {
 
                             {/* Profile Icon */}
                             <div className="user-profile-container ml-3">
-                                <i className="fa fa-user user-icon" style={{ fontSize: '24px', color: 'white', cursor: 'pointer' }}></i>
+                            <Link to="/dashboard">
+                                <i className="fa fa-user user-icon" style={{ fontSize: '24px', color: 'white', cursor: 'pointer' }} ></i>
                                 <div className="dropdown-menu">
                                     <Link to="/profile" className="dropdown-item">Profile</Link>
                                     <Link to="/orders" className="dropdown-item">My Orders</Link>
                                     <Link to="/logout" className="dropdown-item">Logout</Link>
                                 </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
