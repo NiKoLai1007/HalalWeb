@@ -1,0 +1,161 @@
+/* Logo Adjustments */
+.navbar-brand img {
+  display: block; /* Ensures no extra spacing */
+  margin-left: 0; /* Aligns logo to the left */
+  padding: 0; /* Removes unnecessary padding */
+  max-width: 100%; /* Ensures logo responsiveness */
+}
+
+.col-md-2 {
+  padding-left: 5px; /* Adds slight padding for spacing */
+  display: flex;
+  align-items: center; /* Vertically aligns the logo within its container */
+}
+
+
+/* Header Navigation */
+nav {
+  background-color: #27ae60; /* Solid green color */
+  padding: 0.5rem 1rem; /* Adjust padding for a tighter design */
+  height: var(--header-height); /* Ensures consistent header height */
+}
+
+/* Footer */
+footer {
+  background-color: #27ae60; /* Solid green color matching the header */
+  color: white; /* Ensures text is readable */
+  bottom: 0;
+  width: 100%;
+}
+
+
+/* Login, Sign Up, and Cart Link Colors */
+.auth-link {
+  color: white !important; /* Sets Login and Sign Up text color to white */
+  text-decoration: none; /* Removes underline from links */
+}
+
+.auth-link:hover {
+  color: #a3d977 !important; /* Optional: Add hover effect to change color */
+}
+
+.cart-icon {
+  color: white; /* Sets the cart icon color to white */
+}
+
+/* Ensures cart count text is also white */
+.cart-count {
+  color: white;
+}
+
+
+/* Full height layout with flexbox */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* Main content area */
+.content {
+  flex-grow: 1; /* Fills the remaining space */
+}
+
+/* Footer styles */
+footer {
+  background-color: #27ae60 ; /* Light gray background */
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+/* user profile */
+.user-profile-container {
+  position: relative;
+  display: inline-block;
+}
+
+.user-icon {
+  margin-left: 15px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  width: 150px;
+}
+
+.user-profile-container:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+  color: #007BFF;
+}
+
+
+.auth-links {
+  display: flex;
+  align-items: center;
+}
+
+.auth-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.auth-link:hover {
+  color: #007BFF;
+}
+
+.user-profile-container {
+  position: relative;
+  display: inline-block;
+}
+
+.user-icon {
+  margin-left: 10px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  width: 150px;
+}
+
+.user-profile-container:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+  color: #007BFF;
+}
