@@ -1,12 +1,12 @@
-// import React from 'react'
+import React from 'react'
 
-// const Loader = () => {
-//     return (
-//         <div class="overlay">
-//   <div class="loader"></div>
-// </div>
+const Loader = () => {
+    return (
+        <div class="overlay">
+  <div class="loader"></div>
+</div>
 
-//     )
-// }
+    )
+}
 
-// export default Loader
+export default Loader
