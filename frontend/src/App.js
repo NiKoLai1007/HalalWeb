@@ -4,7 +4,7 @@ import Home from './Components/Home';
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
 import Login from './Components/User/Login';
-import Signup from './Components/User/Signup';
+import Register from './Components/User/Register';
 import Dashboard from './Components/Admin/Dashboard';
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} exact />
             <Route path="/login" element={<Login />} exact />
-            <Route path="/signup" element={<Signup />} exact />
+            <Route path="/signup" element={<Register />} exact />
             <Route path="/dashboard" element={<Dashboard />} exact />
           </Routes>
         </main>
