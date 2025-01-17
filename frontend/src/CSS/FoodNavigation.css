@@ -1,0 +1,103 @@
+/* foodnavigation.css */
+.foodcontainer {
+    font-family: 'Poppins', sans-serif; /* Modern and catchy font style */
+    min-height: 100vh;
+    background: linear-gradient(to right, #a4d2bf, #b6e7c4, #00C853, #a4d2bf); /* Your original gradient background */
+  }
+  
+  .section {
+    padding: 40px 0;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .title {
+    font-size: 38px; /* Increased size for a more impactful title */
+    font-weight: 700; /* Bold text for extra emphasis */
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow for contrast */
+    letter-spacing: 2px; /* Adding letter spacing for a stylish look */
+    text-transform: uppercase; /* Giving it an all caps, bold look */
+  }
+  
+  .foods {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    max-height: calc(100vh - 150px); /* Ensuring no scroll bars */
+    overflow: hidden; /* Prevent scroll on the right side */
+  }
+  
+  .food-card {
+    width: 250px; /* Set a fixed width */
+    height: 400px; /* Set a fixed height */
+    text-align: center;
+    background: #ffffff; /* White background to contrast with gradient */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 15px; /* Reduced padding to compact the card */
+    margin-bottom: 20px;
+    cursor: pointer; /* Making it look clickable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adding hover effect */
+    overflow: hidden; /* To keep the card neat when scaled */
+  }
+  
+  .food-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .food-img {
+    width: 100%;
+    height: 150px; /* Fixed height for the food image */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px; /* Reduced margin for compactness */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for image */
+  }
+  
+  .food-name {
+    font-size: 22px; /* Adjusted font size for better fit */
+    font-weight: 600; /* Medium bold for better readability */
+    margin: 10px 0; /* Reduced margin for a more compact card */
+    color: #333; /* Dark color for contrast */
+    text-transform: capitalize; /* Keeps the food names more natural and readable */
+    font-family: 'Poppins', sans-serif; /* Matching font family */
+  }
+  
+  .food-info {
+    display: flex;
+    justify-content: space-between; /* Aligning icons and text to the sides */
+    align-items: center;
+    margin-bottom: 12px; /* Reduced bottom margin */
+  }
+  
+  .food-info i {
+    font-size: 20px; /* Smaller icons */
+    color: #4CAF50; /* Green color for the icon */
+  }
+  
+  .food-info img {
+    width: 20px; /* Reduced icon size */
+    height: 20px;
+    object-fit: contain;
+  }
+  
+  .food-category {
+    font-size: 14px; /* Reduced size for category */
+    color: #777; /* Subtle gray for category text */
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif; /* A simple, clean font for category */
+    margin-bottom: 10px; /* Small margin below the category */
+  }
+  
+  .food-price {
+    font-size: 18px; /* Slightly smaller price text */
+    font-weight: bold;
+    color: #4CAF50; /* Green color for price text */
+    font-family: 'Poppins', sans-serif; /* Matching font family */
+  }
+  

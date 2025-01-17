@@ -15,9 +15,9 @@ const Header = ({ cartItems }) => {
                         <div className="col-4 col-md-2">
                             <Link to="/" className="navbar-brand">
                                 <img 
-                                    src="./images/HALALEXPRESS.png" 
+                                    src="./images/halalogo.png" 
                                     alt="Halal Express Logo" 
-                                    style={{ width: '120px', marginLeft: '0', padding: '0' }} 
+                                    style={{ width: '50px', marginLeft: '0', padding: '0' }} 
                                 />
                             </Link>
                         </div>
@@ -42,7 +42,7 @@ const Header = ({ cartItems }) => {
                             {/* Auth Links */}
                             <div className="auth-links d-flex align-items-center">
                                 <Link to="/login" className="auth-link">Login</Link>
-                                <span style={{ color: 'white', margin: '10px' }}> | </span>
+                                <span style={{ color: 'black', margin: '10px' }}> | </span>
                                 <Link to="/signup" className="auth-link">Sign Up</Link>
                             </div>
 

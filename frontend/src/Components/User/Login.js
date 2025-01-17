@@ -91,80 +91,77 @@ const Login = () => {
 
     return (
         <Fragment>
-            {loading ? (
-                <Loader />
-            ) : (
-                <Fragment>
-                    <Metadata title={'Login'} />
-
-                    <div className="login row wrapper justify-content-center">
-                        {/* <div className="col-12 col-md-5">
-                            <img
-                                src="images/loginpic2.png"
-                                alt="Your Image"
-                                className="img-fluid"
-                                style={{ height: '450px' }}
-                            />
-                        </div> */}
-
-                        <div className="col-12 col-md-4 ">
-                            <form
-                                className="hey"
-                                onSubmit={submitHandler}
-                                style={{ borderRadius: '30px' }}
-                            >
-                                <h1 className="mb-3 font-weight-bold">Login</h1>
-                                <div className="form-group">
-                                    <label htmlFor="email_field">Email</label>
-                                    <input
-                                        type="email"
-                                        id="email_field"
-                                        className={`form-control ${emailError ? 'is-invalid' : ''}`}
-                                        value={email}
-                                        onChange={(e) => {
-                                            setEmail(e.target.value);
-                                            setEmailError('');
-                                        }}
-                                    />
-                                    {emailError && <div className="invalid-feedback">{emailError}</div>}
-                                </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="password_field">Password</label>
-                                    <input
-                                        type="password"
-                                        id="password_field"
-                                        className={`form-control ${passwordError ? 'is-invalid' : ''}`}
-                                        value={password}
-                                        onChange={(e) => {
-                                            setPassword(e.target.value);
-                                            setPasswordError('');
-                                        }}
-                                    />
-                                    {passwordError && <div className="invalid-feedback">{passwordError}</div>}
-                                </div>
-
-                                <Link to="/password/forgot" className="float-right mb-4">
-                                    Forgot Password?
-                                </Link>
-
-                                <button
-                                    id="login_button"
-                                    type="submit"
-                                    className="btn btn-block py-3"
-                                >
-                                    LOGIN
-                                </button>
-
-                                <Link to="/register" className="float-right mt-3">
-                                    New User?
-                                </Link>
-                            </form>
-                        </div>
+        {loading ? (
+            <Loader />
+        ) : (
+            <Fragment>
+                <Metadata title={'Login'} />
+    
+                <div className="login row wrapper justify-content-center align-items-center vh-100">
+                    <div className="col-12 col-md-5 d-none d-md-block">
+                        <img
+                            src="images/halalogo.png"
+                            alt="images"
+                            className="img-fluid rounded"
+                            style={{ height: '400px' }}
+                        />
                     </div>
-                </Fragment>
-            )}
-        </Fragment>
+    
+                    <div className="col-12 col-md-4">
+                        <form className="hey p-4 shadow" onSubmit={submitHandler}>
+                            <h1 className="mb-4 text-center font-weight-bold text-success">Login</h1>
+                            <div className="form-group">
+                                <label htmlFor="email_field" className="form-label">Email</label>
+                                <input
+                                    type="email"
+                                    id="email_field"
+                                    className={`form-control ${emailError ? 'is-invalid' : ''}`}
+                                    value={email}
+                                    onChange={(e) => {
+                                        setEmail(e.target.value);
+                                        setEmailError('');
+                                    }}
+                                />
+                                {emailError && <div className="invalid-feedback">{emailError}</div>}
+                            </div>
+    
+                            <div className="form-group">
+                                <label htmlFor="password_field" className="form-label">Password</label>
+                                <input
+                                    type="password"
+                                    id="password_field"
+                                    className={`form-control ${passwordError ? 'is-invalid' : ''}`}
+                                    value={password}
+                                    onChange={(e) => {
+                                        setPassword(e.target.value);
+                                        setPasswordError('');
+                                    }}
+                                />
+                                {passwordError && <div className="invalid-feedback">{passwordError}</div>}
+                            </div>
+    
+                            <Link to="/password/forgot" className="float-right text-muted mb-3">
+                                Forgot Password?
+                            </Link>
+    
+                            <button
+                                id="login_button"
+                                type="submit"
+                                className="btn btn-success btn-block py-2"
+                            >
+                                LOGIN
+                            </button>
+    
+                            <Link to="/register" className="d-block text-center mt-3 text-success">
+                                New User? Register
+                            </Link>
+                        </form>
+                    </div>
+                </div>
+            </Fragment>
+        )}
+    </Fragment>
+    
     );
 };
 
