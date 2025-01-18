@@ -1,0 +1,32 @@
+.login-form {
+    background-color: #fff;
+    border-radius: 8px;
+    margin-top: 10px;
+    
+}
+
+.login-icon {
+    position: absolute;
+    left: 10px;
+    top: 70%;
+    transform: translateY(-50%);
+    color: #4CAF50;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    padding-left: 40px;
+}
+
+.btn-success {
+    background-color: #4CAF50;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #45a049;
+}

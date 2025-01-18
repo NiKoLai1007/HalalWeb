@@ -8,56 +8,62 @@ const Header = ({ cartItems }) => {
     return (
         <Fragment>
             {/* Main Navbar */}
-            <nav className="navbar">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
-                    <div className="row align-items-center w-100">
-                        {/* Logo */}
-                        <div className="col-4 col-md-2">
-                            <Link to="/" className="navbar-brand">
-                                <img 
-                                    src="./images/halalogo.png" 
-                                    alt="Halal Express Logo" 
-                                    style={{ width: '50px', marginLeft: '0', padding: '0' }} 
-                                />
-                            </Link>
-                        </div>
+                    {/* Logo */}
+                    <Link to="/" className="navbar-brand">
+                        <img
+                            src="./images/Logo.png"
+                            alt="Halal Express Logo"
+                            style={{ width: '50px' }}
+                        />
+                    </Link>
 
-                        {/* Search Bar */}
-                        <div className="col-8 col-md-6">
-                            <Search />
-                        </div>
+                    {/* Collapsible button for smaller screens */}
+                    <button
+                        className="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
 
-                        {/* Cart Icon */}
-                        <div className="col-4 col-md-2 text-right">
-                            <Link to="/cart" className="cart-container">
-                                <i className="fa fa-shopping-cart cart-icon"></i>
-                                {cartItems && cartItems.length > 0 && (
-                                    <span className="cart-count">{cartItems.length}</span>
-                                )}
-                            </Link>
-                        </div>
-
-                        {/* Top Navigation Bar */}
-                        <div className="col-4 col-md-2 text-right d-flex align-items-center justify-content-end">
-                            {/* Auth Links */}
-                            <div className="auth-links d-flex align-items-center">
-                                <Link to="/login" className="auth-link">Login</Link>
-                                <span style={{ color: 'black', margin: '10px' }}> | </span>
-                                <Link to="/signup" className="auth-link">Sign Up</Link>
-                            </div>
-
-                            {/* Profile Icon */}
-                            <div className="user-profile-container ml-3">
-                            <Link to="/dashboard">
-                                <i className="fa fa-user user-icon" style={{ fontSize: '24px', color: 'white', cursor: 'pointer' }} ></i>
-                                <div className="dropdown-menu">
-                                    <Link to="/profile" className="dropdown-item">Profile</Link>
-                                    <Link to="/orders" className="dropdown-item">My Orders</Link>
-                                    <Link to="/logout" className="dropdown-item">Logout</Link>
-                                </div>
+                    {/* Navbar links */}
+                    <div className="collapse navbar-collapse" id="navbarNav">
+                        <ul className="navbar-nav ml-auto">
+                            <li className="nav-item">
+                                <Link to="/" className="nav-link">
+                                    Home
                                 </Link>
-                            </div>
-                        </div>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/about" className="nav-link">
+                                    About
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/contacts" className="nav-link">
+                                    Contacts
+                                </Link>
+                            </li>
+                        
+
+                            <Search/>
+                            <li className="nav-item">
+                                <Link to="/login" className="nav-link">
+                                    Login
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/signup" className="nav-link">
+                                    Sign Up
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
