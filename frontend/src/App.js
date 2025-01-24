@@ -7,6 +7,7 @@ import Login from './Components/User/Login';
 import Register from './Components/User/Register';
 import Dashboard from './Components/Admin/Dashboard';
 import UserLists from './Components/Admin/UserLists';
+import FoodLists from './Components/Admin/FoodLists';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from './Components/Cart/Cart';
 import FoodNavigation from './Components/Restaurant/foodnavigation';
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/signup" element={<Register />} exact />
             <Route path="/dashboard" element={<Dashboard />} exact />
             <Route path="/userlists" element={ <UserLists /> } />
+            <Route path="/foodlists" element={ <FoodLists /> } />
           </Routes>
         </main>
         {/* <Footer /> */}

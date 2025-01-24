@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../CSS/Dashboard.css'; // Import the CSS file
 import UserLists from '../Admin/UserLists'; // Import the UserList component
+import FoodLists from '../Admin/FoodLists';
 
 function Dashboard() {
   const [activeSection, setActiveSection] = useState('overview'); // State to track the active section
@@ -48,8 +49,8 @@ function Dashboard() {
 
         {activeSection === 'foods' && (
           <section className="dashboard-section" id="foods">
-            <h2>Foods</h2>
-            <p>Manage your food records here.</p>
+           
+            <FoodLists />
           </section>
         )}
 

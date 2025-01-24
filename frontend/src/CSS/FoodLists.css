@@ -1,0 +1,95 @@
+/* Container for the food list */
+.food-list-container {
+    width: 80%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header of the food list */
+  .food-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .food-list-header h2 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Search and create buttons */
+  .food-list-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .food-list-search {
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .food-list-create-btn {
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .food-list-create-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Food list table */
+  .food-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .food-list-table th,
+  .food-list-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .food-list-table th {
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  .food-list-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Pagination */
+  .food-list-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .food-list-pagination button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .food-list-pagination button:hover {
+    background-color: #0056b3;
+  }
+  
+  .food-list-pagination span {
+    font-size: 16px;
+    color: #333;
+  }
