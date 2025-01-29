@@ -1,0 +1,66 @@
+.food-carousel-beautiful {
+margin-top: 100px;
+  position: relative;
+  width: 900px; /* Carousel width */
+  margin-left: auto;  /* Center the carousel horizontally */
+  margin-right: auto;
+  border-radius: 15px;  /* Rounded corners */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  overflow: hidden;
+
+  height: 350px; /* Fixed height */
+}
+
+.food-carousel-beautiful img {
+  object-fit: cover; /* Ensure the image covers the entire area */
+  height: 350px; /* Fixed image height to match the container */
+  width: 100%; /* Ensure the image takes the full width of the container */
+  transition: transform 0.5s ease; /* Smooth zoom effect */
+}
+
+.food-carousel-beautiful img:hover {
+  transform: scale(1.1);  /* Zoom effect on hover */
+}
+
+.food-carousel-beautiful .carousel-caption-style {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 10px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.food-carousel-beautiful .carousel-caption-style:hover {
+  opacity: 1; /* Brighten the caption on hover */
+}
+
+.food-carousel-beautiful .carousel-caption-style h5 {
+  color: white;
+  font-size: 2rem;  /* Larger font for visibility */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+
+.food-carousel-beautiful .carousel-caption-style p {
+  color: white;
+  font-size: 1.2rem;  /* Larger font for readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+
+/* Optional: Add animation effect for the carousel itself */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.food-carousel-beautiful .carousel-item {
+  animation: fadeIn 1s ease-in-out;
+}

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import '../../CSS/Cart.css'; // Ensure you have the updated styles in this file
+import '../../CSS/Cart.css'; // Ensure this file contains the updated styles
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faPlus, faMinus, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPlus, faMinus, faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons';
+import CheckoutModal from '../Cart/Checkout'; // Import the Checkout Modal
 
 const sampleCartItems = [
   {
@@ -9,7 +10,7 @@ const sampleCartItems = [
     name: 'Chicken Biryani',
     price: 250,
     quantity: 2,
-    image: 'https://img.freepik.com/premium-psd/plate-chicken-biryani-png-isolated-transparent-background_645927-12548.jpg', // Placeholder image
+    image: 'https://img.freepik.com/premium-psd/plate-chicken-biryani-png-isolated-transparent-background_645927-12548.jpg',
   },
   {
     id: 2,
@@ -29,12 +30,15 @@ const sampleCartItems = [
 
 const Cart = ({ cartItems = sampleCartItems, onRemove, onIncrease, onDecrease }) => {
   const [cartOpen, setCartOpen] = useState(false);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   const getTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
   };
 
   const toggleCart = () => setCartOpen(!cartOpen);
+  const openCheckout = () => setCheckoutOpen(true);
+  const closeCheckout = () => setCheckoutOpen(false);
 
   return (
     <>
@@ -45,10 +49,13 @@ const Cart = ({ cartItems = sampleCartItems, onRemove, onIncrease, onDecrease })
 
       {/* Cart Modal */}
       <div className={`cart-modal ${cartOpen ? 'open' : ''}`}>
-        <div className="cart-header">
-          <span>Your Cart</span>
-          <button className="close-cart" onClick={toggleCart}>✖</button>
-        </div>
+      <div className="cart-header">
+  <span>Your Cart</span>
+  <button className="close-cart" onClick={toggleCart}>
+    <FontAwesomeIcon icon={faTimes} />
+  </button>
+</div>
+
 
         <div className="cart-items">
           {cartItems.map((item) => (
@@ -76,9 +83,14 @@ const Cart = ({ cartItems = sampleCartItems, onRemove, onIncrease, onDecrease })
 
         <div className="cart-footer">
           <div className="cart-total">Total: ₱{getTotalPrice()}</div>
-          <button className="cart-checkout-button">Proceed to Checkout</button>
+          <button className="cart-checkout-button" onClick={openCheckout}>
+            Proceed to Checkout
+          </button>
         </div>
       </div>
+
+      {/* Checkout Modal */}
+      {checkoutOpen && <CheckoutModal total={getTotalPrice()} onClose={closeCheckout} />}
     </>
   );
 };

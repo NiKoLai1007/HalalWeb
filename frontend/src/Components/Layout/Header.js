@@ -5,7 +5,7 @@ import { PersonCircle } from 'react-bootstrap-icons';
 import '../../App.css';
 import Search from './Search';
 import { getUser, logout } from '../../utils/helpers'; // Import helper functions
-
+import '../../CSS/Layout/Header.css';
 const Header = () => {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
@@ -39,18 +39,18 @@ const Header = () => {
                         />
                     </Link>
 
-                    {/* Collapsible button for smaller screens */}
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+                {/* Collapsible button for smaller screens */}
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
 
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto d-flex align-items-center">
@@ -62,6 +62,9 @@ const Header = () => {
                             </li>
                             <li className="nav-item me-3">
                                 <Link to="/contacts" className="nav-link">Contacts</Link>
+                            </li>
+                            <li className="nav-item me-3">
+                                <Link to="/menu" className="nav-link">Menu</Link>
                             </li>
 
                             <li className="nav-item me-3">

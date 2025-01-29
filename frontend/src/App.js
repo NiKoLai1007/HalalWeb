@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Components/Home';
 import Header from './Components/Layout/Header';
-import Footer from './Components/Layout/Footer';
 import Login from './Components/User/Login';
 import Register from './Components/User/Register';
 import Dashboard from './Components/Admin/Dashboard';
@@ -10,9 +9,8 @@ import UserLists from './Components/Admin/UserLists';
 import FoodLists from './Components/Admin/FoodLists';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from './Components/Cart/Cart';
-import FoodNavigation from './Components/Restaurant/foodnavigation';
-import FoodCarousel from './Components/Restaurant/foodcarousel';
-
+import Menu from './Components/Restaurant/Menu';
+import About from './Components/About';
 
 const App = () => {
   return (
@@ -23,8 +21,8 @@ const App = () => {
         <main className="content"> {/* Main content area */}
           <Routes>
             <Route path="/" element={<Home />} exact />
-            <Route path="/foodnavigation" element={<FoodNavigation/>} exact />
-            <Route path="/foodcarousel" lement={<FoodCarousel/>} exact />
+            <Route path="/about" element={<About />} exact />
+            <Route path="/menu" element={<Menu />} exact />
             <Route path="/cart" element={<Cart/>} exact />
             <Route path="/login" element={<Login />} exact />
             <Route path="/signup" element={<Register />} exact />
@@ -33,7 +31,7 @@ const App = () => {
             <Route path="/foodlists" element={ <FoodLists /> } />
           </Routes>
         </main>
-        {/* <Footer /> */}
+  
       </Router>
     </div>
   );

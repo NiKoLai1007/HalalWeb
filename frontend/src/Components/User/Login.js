@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Metadata from '../Layout/Metadata';
-import '../../CSS/Login.css';
+import '../../CSS//User/Login.css';
 import { authenticate, errMsg } from '../../utils/helpers';
 import axios from 'axios';
 
