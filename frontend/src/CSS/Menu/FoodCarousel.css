@@ -64,3 +64,11 @@ margin-top: 100px;
 .food-carousel-beautiful .carousel-item {
   animation: fadeIn 1s ease-in-out;
 }
+
+.slick-slide {
+  z-index: 1; /* Lower priority than the cart */
+}
+
+.cart-modal {
+  z-index: 10000; /* Higher priority */
+}
