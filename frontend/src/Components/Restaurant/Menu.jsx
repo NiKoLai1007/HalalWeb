@@ -1,6 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FoodCarousel from './FoodCarousel'
+import FoodCarousel from './foodcarousel'
 import MenuList from './MenuList'
 import '../../CSS/Menu/Menu.css'
 function Menu() {
