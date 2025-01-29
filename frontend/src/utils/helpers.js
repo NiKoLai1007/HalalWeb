@@ -1,10 +1,11 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 export const authenticate = (data, next) => {
     if (window !== 'undefined') {
         // console.log('authenticate', response)
-        sessionStorage.setItem('token', JSON.stringify(data.token));
-        sessionStorage.setItem('user', JSON.stringify(data.user));
+        sessionStorage.setItem('token', JSON.stringify(data.data.userToken));
+        sessionStorage.setItem('user', JSON.stringify(data.data));
     }
     next();
 };
@@ -31,12 +32,14 @@ export const getUser = () => {
 };
 
 // remove token from session storage
-export const logout = next => {
+export const logout = (next) => {
     if (window !== 'undefined') {
         sessionStorage.removeItem('token');
         sessionStorage.removeItem('user');
     }
-    next();
+    if (next && typeof next === "function") {
+        next();
+      }
 };
 
 export const errMsg = (message = '') => toast.error(message, {

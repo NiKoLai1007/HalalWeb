@@ -1,19 +1,39 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Dropdown } from 'react-bootstrap';
+import { PersonCircle } from 'react-bootstrap-icons';
 import '../../App.css';
 import Search from './Search';
-import { Link } from 'react-router-dom';
-import 'react-toastify/dist/ReactToastify.css';
+import { getUser, logout } from '../../utils/helpers'; // Import helper functions
 
-const Header = ({ cartItems }) => {
+const Header = () => {
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
+
+    // Fetch user from sessionStorage
+    useEffect(() => {
+        const storedUser = getUser();
+        console.log('Stored user:', storedUser);
+        setUser(storedUser);
+    }, []);
+
+    // Logout function
+    const logoutUser = () => {
+        logout()
+            setUser(null); // Clear user state
+            navigate('/login'); // Redirect to login page
+            window.location.reload(); // Force UI update
+        ;
+    };
+
     return (
         <Fragment>
-            {/* Main Navbar */}
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
                     {/* Logo */}
                     <Link to="/" className="navbar-brand">
                         <img
-                            src="./images/Logo.png"
+                            src="/images/Logo.png"
                             alt="Halal Express Logo"
                             style={{ width: '50px' }}
                         />
@@ -32,37 +52,62 @@ const Header = ({ cartItems }) => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    {/* Navbar links */}
                     <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav ml-auto">
-                            <li className="nav-item">
-                                <Link to="/" className="nav-link">
-                                    Home
-                                </Link>
+                        <ul className="navbar-nav ms-auto d-flex align-items-center">
+                            <li className="nav-item me-3">
+                                <Link to="/" className="nav-link">Home</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/about" className="nav-link">
-                                    About
-                                </Link>
+                            <li className="nav-item me-3">
+                                <Link to="/about" className="nav-link">About</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/contacts" className="nav-link">
-                                    Contacts
-                                </Link>
+                            <li className="nav-item me-3">
+                                <Link to="/contacts" className="nav-link">Contacts</Link>
                             </li>
-                        
 
-                            <Search/>
-                            <li className="nav-item">
-                                <Link to="/login" className="nav-link">
-                                    Login
-                                </Link>
+                            <li className="nav-item me-3">
+                                <Search />
                             </li>
-                            <li className="nav-item">
-                                <Link to="/signup" className="nav-link">
-                                    Sign Up
-                                </Link>
-                            </li>
+
+                            {/* User Dropdown */}
+                            <Dropdown align="end">
+                                <Dropdown.Toggle
+                                    as="div"
+                                    style={{
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                    }}
+                                >
+                                    {user ? (
+                                        <>
+                                            <img
+                                                src={user.avatar || "/images/default-avatar.png"}
+                                                alt={user.name || "User"}
+                                                style={{ width: '36px', height: '36px', borderRadius: '50%', marginRight: '8px' }}
+                                            />
+                                            <span className="text-white">{user.name || "User"}</span>
+                                        </>
+                                    ) : (
+                                        <PersonCircle size={36} color="black" style={{ marginRight: '8px' }} />
+                                    )}
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    {user ? (
+                                        <>
+                                            <Dropdown.Item as={Link} to="/profile">Profile</Dropdown.Item>
+                                            <Dropdown.Item as={Link} to="/orders">Orders</Dropdown.Item>
+                                            <Dropdown.Divider />
+                                            <Dropdown.Item onClick={logoutUser} className="text-danger">Logout</Dropdown.Item>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Dropdown.Item as={Link} to="/login">Sign In</Dropdown.Item>
+                                            <Dropdown.Item as={Link} to="/signup">Sign Up</Dropdown.Item>
+                                        </>
+                                    )}
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </ul>
                     </div>
                 </div>
