@@ -88,7 +88,7 @@ const Header = () => {
                                                 alt={user.name || "User"}
                                                 style={{ width: '36px', height: '36px', borderRadius: '50%', marginRight: '8px' }}
                                             />
-                                            <span className="text-white">{user.name || "User"}</span>
+                                            <span className="text-white">{user.name}</span>
                                         </>
                                     ) : (
                                         <PersonCircle size={36} color="black" style={{ marginRight: '8px' }} />
