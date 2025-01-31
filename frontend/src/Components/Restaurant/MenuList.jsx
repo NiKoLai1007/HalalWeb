@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../CSS/Menu/MenuList.css';
 
+
 const sampleMenuItems = [
   {
     id: 1,

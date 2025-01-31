@@ -11,6 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from './Components/Cart/Cart';
 import Menu from './Components/Restaurant/Menu';
 import About from './Components/About';
+import Profile from './Components/User/profile';
+
 
 const App = () => {
   return (
@@ -24,6 +26,7 @@ const App = () => {
             <Route path="/about" element={<About />} exact />
             <Route path="/menu" element={<Menu />} exact />
             <Route path="/cart" element={<Cart/>} exact />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/login" element={<Login />} exact />
             <Route path="/signup" element={<Register />} exact />
             <Route path="/dashboard" element={<Dashboard />} exact />

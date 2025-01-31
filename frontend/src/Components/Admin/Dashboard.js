@@ -1,75 +1,50 @@
-import React, { useState } from 'react';
-import '../../CSS/Dashboard.css'; // Import the CSS file
-import UserLists from '../Admin/UserLists'; // Import the UserList component
-import FoodLists from '../Admin/FoodLists';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTachometerAlt, faBox, faUsers, faChartBar, faCog } from '@fortawesome/free-solid-svg-icons'; // import icons
+import SalesChart from '../Admin/Charts/SalesChart';
+import OrdersChart from '../Admin/Charts/OrderChart';
+import UserGrowthChart from '../Admin/Charts/UserGrowthChart';
+import '../../CSS/Dashboard/Dashboard.css';
 
-function Dashboard() {
-  const [activeSection, setActiveSection] = useState('overview'); // State to track the active section
-
+const SuperAdminDashboard = () => {
   return (
-    <div className="dashboard-container">
+    <div>
       {/* Sidebar */}
-      <aside className="dashboard-sidebar">
-        <h2>Dashboard</h2>
+      <div className="sidebar">
+        <h2>HalalExpress</h2>
         <ul>
-          <li>
-            <button onClick={() => setActiveSection('users')}>Users</button>
-          </li>
-          <li>
-            <button onClick={() => setActiveSection('foods')}>Foods</button>
-          </li>
-          <li>
-            <button onClick={() => setActiveSection('restaurants')}>Restaurants</button>
-          </li>
-          <li>
-            <button onClick={() => setActiveSection('orders')}>Orders</button>
-          </li>
+          <li><Link to="/dashboard"><FontAwesomeIcon icon={faTachometerAlt} /> Dashboard</Link></li>
+          <li><Link to="/orders"><FontAwesomeIcon icon={faBox} /> Orders</Link></li>
+          <li><Link to="/users"><FontAwesomeIcon icon={faUsers} /> Users</Link></li>
+          <li><Link to="/sales"><FontAwesomeIcon icon={faChartBar} /> Sales</Link></li>
+          <li><Link to="/settings"><FontAwesomeIcon icon={faCog} /> Settings</Link></li>
         </ul>
-      </aside>
+        <div className="sidebar-footer">
+          <p>&copy; 2025 HalalExpress</p>
+        </div>
+      </div>
 
-      {/* Main Content */}
-      <main className="dashboard-main">
-        <header className="dashboard-header">
-          <h1>Welcome Admin</h1>
-        </header>
-
-        {/* Conditional Rendering Based on Active Section */}
-        {activeSection === 'overview' && (
-          <section className="dashboard-section" id="overview">
-            <h2>Overview</h2>
-            <p>Here you can view an overview of your recent activity and stats.</p>
-          </section>
-        )}
-
-        {activeSection === 'users' && (
-          <section className="dashboard-section" id="users">
-            <UserLists /> {/* Render the UserList component here */}
-          </section>
-        )}
-
-        {activeSection === 'foods' && (
-          <section className="dashboard-section" id="foods">
-           
-            <FoodLists />
-          </section>
-        )}
-
-        {activeSection === 'restaurants' && (
-          <section className="dashboard-section" id="restaurants">
-            <h2>Restaurants</h2>
-            <p>Manage restaurant information here.</p>
-          </section>
-        )}
-
-        {activeSection === 'orders' && (
-          <section className="dashboard-section" id="orders">
-            <h2>Orders</h2>
-            <p>Track and manage orders here.</p>
-          </section>
-        )}
-      </main>
+      {/* Dashboard Content */}
+      <div className="dashboard-container">
+        <h1 className="dashboard-title">Super Admin Dashboard</h1>
+        <div className="chart-container">
+          <div className="chart-box">
+            <h3 className="chart-title">Sales Chart</h3>
+            <SalesChart />
+          </div>
+          <div className="chart-box">
+            <h3 className="chart-title">Orders Chart</h3>
+            <OrdersChart />
+          </div>
+          <div className="chart-box">
+            <h3 className="chart-title">User Growth Chart</h3>
+            <UserGrowthChart />
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
-export default Dashboard;
+export default SuperAdminDashboard;

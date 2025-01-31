@@ -1,0 +1,99 @@
+/* General Styling */
+.profile-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Profile Card */
+  .profile-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+  }
+  
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid gray;
+  }
+  
+  .profile-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .profile-email,
+  .profile-phone {
+    color: gray;
+    font-size: 14px;
+  }
+  
+  .halal-badge {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  /* Order History */
+  .order-history {
+    margin-top: 20px;
+  }
+  
+  .order-history h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .order-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+  
+  .order-restaurant {
+    font-weight: bold;
+  }
+  
+  .order-items {
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .order-total {
+    font-weight: bold;
+  }
+  
+  .order-status {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Status Colors */
+  .delivered {
+    color: green;
+  }
+  
+  .on-the-way {
+    color: orange;
+  }
+  
+  .cancelled {
+    color: red;
+  }
+  
+  .order-date {
+    font-size: 12px;
+    color: gray;
+  }
+  
